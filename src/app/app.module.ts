@@ -10,6 +10,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { CoreModule } from './@core/core.module';
 import { ThemeModule } from './@theme/theme.module';
 import { AppComponent } from './app.component';
+import { ButtonModule } from 'primeng/button';
+import { TableModule } from 'primeng/table';
 import { AppRoutingModule } from './app-routing.module';
 import {
   NbChatModule,
@@ -19,12 +21,16 @@ import {
   NbSidebarModule,
   NbToastrModule,
   NbWindowModule,
+  NbButtonModule,
+  NbTableModule
 } from '@nebular/theme';
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule,
+    ButtonModule,
+    TableModule,
     BrowserAnimationsModule,
     HttpClientModule,
     AppRoutingModule,

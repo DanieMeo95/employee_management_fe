@@ -6,6 +6,7 @@ import { ThemeModule } from '../../@theme/theme.module';
 import { TablesRoutingModule, routedComponents } from './tables-routing.module';
 import { FsIconComponent } from './tree-grid/tree-grid.component';
 import { TaskComponent } from './TaskTable/task/task.component';
+import {TableModule} from 'primeng/table';
 
 @NgModule({
   imports: [
@@ -14,6 +15,7 @@ import { TaskComponent } from './TaskTable/task/task.component';
     NbIconModule,
     NbInputModule,
     ThemeModule,
+    TableModule,
     TablesRoutingModule,
     Ng2SmartTableModule,
   ],
