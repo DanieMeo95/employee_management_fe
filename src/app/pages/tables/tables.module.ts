@@ -7,6 +7,8 @@ import { TablesRoutingModule, routedComponents } from './tables-routing.module';
 import { FsIconComponent } from './tree-grid/tree-grid.component';
 import { TaskComponent } from './TaskTable/task/task.component';
 
+import {TableModule} from 'primeng/table';
+
 @NgModule({
   imports: [
     NbCardModule,
@@ -16,6 +18,7 @@ import { TaskComponent } from './TaskTable/task/task.component';
     ThemeModule,
     TablesRoutingModule,
     Ng2SmartTableModule,
+    TableModule,
   ],
   declarations: [
     ...routedComponents,
