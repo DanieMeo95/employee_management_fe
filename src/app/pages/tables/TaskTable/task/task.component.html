@@ -1,21 +1,48 @@
-<p-table [value]="taskList">
-    <ng-template pTemplate="header">
-        <tr>
-            <th>Code</th>
-            <th>Name</th>
-            <th>Category</th>
-            <th>Quantity</th>
-        </tr>
-    </ng-template>
-    <ng-template pTemplate="body" let-f>
-    
-            
-                <tr>
-                    <td>{{f.description}}</td>
-                    <td>{{f.factory}}</td> 
-                    <td>{{f.customerDto.id}}</td> 
-                </tr>
-            
-        
-    </ng-template>
-</p-table>
+
+
+
+<div class="card">
+    <p-toolbar styleClass="mb-4 gap-2">
+        <ng-template pTemplate="left">
+            <button pButton pRipple label="New" icon="pi pi-plus" class="p-button-success mr-2" (click)="openNew()"></button>
+            <button pButton pRipple [label]="Delete" icon="pi pi-trash" class="p-button-danger" (click)="deleteSelectedProducts()"></button>
+        </ng-template>
+
+        <ng-template pTemplate="right">
+            <p-fileUpload mode="basic" accept="image/*" [maxFileSize]="1000000" label="Import" chooseLabel="Import" class="mr-2 inline-block"></p-fileUpload>
+            <button pButton pRipple label="Export" icon="pi pi-upload" class="p-button-help"></button>
+        </ng-template>
+    </p-toolbar>
+
+    <p-table #dt [value]="taskList" [tableStyle]="{'min-width': '75rem'}">
+        <ng-template pTemplate="caption">
+            <div class="flex align-items-center justify-content-between">
+                <h5 class="m-0">Manage Products</h5>
+                <span class="p-input-icon-left">
+                    <i class="pi pi-search"></i>
+                    <input pInputText type="text" (input)="dt.filterGlobal($event.target.value, 'contains')" placeholder="Search..." />
+                </span>
+            </div>
+        </ng-template>
+        <ng-template pTemplate="header">
+            <tr>
+                
+                <th pSortableColumn="description" style="min-width:15rem">Descrizione <p-sortIcon field="description"></p-sortIcon></th>
+                <th pSortableColumn="factory">Factory <p-sortIcon field="factory"></p-sortIcon></th>
+                <th></th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-f>
+            <tr>
+                
+                <td>{{f.description}}</td>
+                <td>{{f.factory}}</td>
+               
+                <td>
+                    <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-success mr-2" (click)="editProduct(product)"></button>
+                    <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-warning" (click)="deleteProduct(product)"></button>
+                </td>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>
