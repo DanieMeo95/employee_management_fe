@@ -1,10 +1,6 @@
 @import 'primeng/resources/themes/saga-blue/theme.css';
 @import 'primeng/resources/primeng.min.css';
 
-
-
-
-
 :host ::ng-deep {
     .p-paginator {
         .p-paginator-current {
@@ -45,11 +41,11 @@
             padding: 1rem;
         }
 
-        .p-datatable-thead>tr>th {
+        .p-datatable-thead > tr > th {
             text-align: left;
         }
 
-        .p-datatable-tbody>tr>td {
+        .p-datatable-tbody > tr > td {
             cursor: auto;
         }
 
@@ -59,7 +55,9 @@
     }
 
     /* Responsive */
-    .p-datatable-customers .p-datatable-tbody>tr>td .p-column-title {
+    .p-datatable-customers 
+    .p-datatable-tbody > tr > td
+    .p-column-title {
         display: none;
     }
 }
@@ -74,7 +72,7 @@
                     display: none !important;
                 }
 
-                .p-datatable-tbody>tr {
+                .p-datatable-tbody > tr {
                     border-bottom: 1px solid var(--layer-2);
 
                     >td {
