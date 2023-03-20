@@ -56,9 +56,12 @@ import { AuthInterceptor } from './auth/AuthInterceptor';
     ThemeModule.forRoot(),
   ],
   providers: [
-    {provide: HTTP_INTERCEPTORS,
+    {
+      provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,
-      multi: true}],
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {

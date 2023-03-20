@@ -20,11 +20,11 @@ import { LoginService } from '../../_services/login.service';
         username : [''],
         password : ['']
        })
-       }
+    }
        
-  ngOnInit(): void {
-    throw new Error('Method not implemented.');
-  }
+    ngOnInit(): void {
+      throw new Error('Method not implemented.');
+    }
        
       
        login(){

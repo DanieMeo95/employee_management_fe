@@ -9,13 +9,15 @@ const TOKEN_HEADER_KEY = 'Authorization'; // for Spring Boot back-end
 export class AuthInterceptor implements HttpInterceptor {
     constructor() { }
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-        let authReq = req;
         const token = localStorage.getItem('token') || '';
         const httpRequest = req.clone({ //eseguo il clone perchè è readonly      
         headers: req.headers.append('Authorization', `Bearer ${token}`)});
 
         console.log(token, "token")
-        console.log(req.headers, "headers")
-         return next.handle(httpRequest);}
-        }
+        console.log(req.headers, "headers");
+        console.log("http request", httpRequest); 
+        return next.handle(httpRequest);
+    }
+
+}
         

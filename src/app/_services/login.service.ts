@@ -17,7 +17,16 @@ export class LoginService {
   constructor(private http: HttpClient)
   { }
   login(loginRequest: LoginRequest): Observable<any> {
-    return this.http.post(environment.apiUrl + "/auth/authenticate", loginRequest);
+    let httpHeaders = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Cache-Control': 'no-cache'
+    });
+    
+    let options = {
+      headers: httpHeaders
+    };
+
+    return this.http.post(environment.apiUrl + "/auth/authenticate", loginRequest, options);
     
   }
 }
