@@ -30,9 +30,10 @@ import {
 } from '@nebular/theme';
 import { LoginComponent } from './login/login/login.component';
 import { AuthInterceptor } from './auth/AuthInterceptor';
+import { SignUpComponent } from './sign-up/sign-up/sign-up.component';
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent],
+  declarations: [AppComponent, LoginComponent, SignUpComponent],
   imports: [
     BrowserModule,
     ButtonModule,
